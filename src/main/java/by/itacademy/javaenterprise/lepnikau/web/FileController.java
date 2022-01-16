@@ -57,8 +57,8 @@ public class FileController {
     }
 
     private String saveImage(String directory, String fileName, MultipartFile image) throws IOException {
-        File file = new File(directory, fileName + ".jpg");
         LOG.info("saveImage method");
+        File file = new File(directory, fileName + ".jpg");
         FileUtils.writeByteArrayToFile(file, image.getBytes());
 
         return "File '" + file.getName() + "' saved by path: " + file.getPath();
